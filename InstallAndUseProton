@@ -1,0 +1,34 @@
+Instalar protonVPN
+
+wget https://repo.protonvpn.com/debian/dists/stable/main/binary-all/protonvpn-stable-release_1.0.6_all.deb
+sudo dpkg -i ./protonvpn-stable-release_1.0.6_all.deb && sudo apt update
+echo "e5e03976d0980bafdf07da2f71b14fbc883c091e72b16772199742c98473002f protonvpn-stable-release_1.0.6_all.deb" | sha256sum --check -
+sudo apt install proton-vpn-gnome-desktop
+
+****** USAR PROTON ******
+
+sudo apt install openvpn 
+sudo apt install openresolv
+
+sudo wget "https://raw.githubusercontent.com/ProtonVPN/scripts/master/update-resolv-conf.sh" -O "/etc/openvpn/update-resolv-conf"
+sudo chmod +x "/etc/openvpn/update-resolv-conf"
+
+cd /home/usroltp/tmp
+
+#copiar acá el archivo nl-free-150.protonvpn.udp.ovpn
+
+sudo openvpn nl-free-150.protonvpn.udp.ovpn
+
+Yh5IIknX0SNYL5n0
+eQOVUjI8JUXK9IN734NkhZTWEeET6cRv
+
+Listo! abrir ssh desde otro servidor:
+
+
+ejemplo:
+ssh usroltp@10.130.5.3
+
+
+*******  ELIMINAR PROTONVPN  **************
+
+sudo apt purge "protonvpn*" proton-vpn-gnome-desktop && sudo apt autoremove
